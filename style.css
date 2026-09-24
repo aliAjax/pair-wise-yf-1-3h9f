@@ -1,0 +1,69 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #10161f;
+  color: #e6edf3;
+}
+header {
+  padding: 16px 24px;
+  background: #161d29;
+  border-bottom: 1px solid #2a3546;
+}
+header h1 { margin: 0; font-size: 20px; }
+header .sub { margin: 4px 0 0; color: #8b98ab; font-size: 13px; }
+main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+.panel {
+  background: #161d29;
+  border: 1px solid #2a3546;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.panel h2 { margin: 0 0 12px; font-size: 15px; color: #9fb4cc; }
+#register-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+#register-form label { display: flex; flex-direction: column; font-size: 12px; color: #8b98ab; gap: 4px; }
+input, select, button {
+  background: #0d131c;
+  border: 1px solid #2a3546;
+  color: #e6edf3;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 14px;
+}
+button { cursor: pointer; background: #1f6feb; border-color: #1f6feb; }
+button:hover { background: #2c7dff; }
+button.danger { background: #5a1d1d; border-color: #7a2a2a; }
+button.small { padding: 4px 8px; font-size: 12px; }
+.layers { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.layer {
+  border: 1px solid #2a3546;
+  border-radius: 8px;
+  padding: 12px;
+  background: #0d131c;
+}
+.layer.lamp-on { border-color: #d4a017; box-shadow: 0 0 12px rgba(212, 160, 23, .25); }
+.layer h3 { margin: 0 0 8px; font-size: 14px; }
+.lamp { font-size: 12px; padding: 2px 8px; border-radius: 10px; background: #2a3546; color: #8b98ab; }
+.layer.lamp-on .lamp { background: #d4a017; color: #10161f; }
+.layer .meta { font-size: 13px; line-height: 1.7; color: #b8c4d4; }
+.layer .meta .countdown { color: #ffd75e; font-weight: 600; }
+.layer .meta .overdue { color: #ff7b72; font-weight: 600; }
+.layer .actions { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+.tag-disease { color: #ff9d5c; }
+.tag-normal { color: #7ee2a8; }
+.messages { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.8; max-height: 180px; overflow-y: auto; }
+.messages .conflict { color: #ff7b72; }
+.messages .ok { color: #7ee2a8; }
+.messages .info { color: #9fb4cc; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.batch-list { margin: 0; padding: 0; list-style: none; font-size: 13px; }
+.batch-list li {
+  padding: 8px 10px;
+  border: 1px solid #2a3546;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  background: #0d131c;
+}
+.batch-list .overdue { border-color: #7a2a2a; }
+.empty-hint { color: #5c6a7d; font-size: 13px; }

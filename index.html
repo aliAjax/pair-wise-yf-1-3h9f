@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>温室夜班补光排程台</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>温室夜班补光排程台</h1>
+  <p class="sub">四层苗架 · 一层一台灯 · 当前时间 <span id="clock">--:--:--</span></p>
+</header>
+
+<main>
+  <!-- 批次登记 -->
+  <section class="panel" id="register-panel">
+    <h2>批次登记</h2>
+    <form id="register-form">
+      <label>品种
+        <input type="text" id="f-variety" required placeholder="如：番茄 A3">
+      </label>
+      <label>剩余补光（分钟）
+        <input type="number" id="f-remaining" required min="1" step="1" placeholder="如：120">
+      </label>
+      <label>完成期限
+        <input type="datetime-local" id="f-deadline" required>
+      </label>
+      <label>病害等级
+        <select id="f-disease">
+          <option value="0">0 无</option>
+          <option value="1">1 轻</option>
+          <option value="2">2 中</option>
+          <option value="3">3 重</option>
+        </select>
+      </label>
+      <button type="submit">登记批次</button>
+    </form>
+  </section>
+
+  <!-- 四层苗架 -->
+  <section class="panel">
+    <h2>苗架层（一层一灯）</h2>
+    <div id="layers" class="layers"></div>
+  </section>
+
+  <!-- 调度提示 / 冲突说明 -->
+  <section class="panel" id="message-panel">
+    <h2>调度记录</h2>
+    <ul id="messages" class="messages"></ul>
+  </section>
+
+  <!-- 等待与完成 -->
+  <section class="panel two-col">
+    <div>
+      <h2>等待补光</h2>
+      <ul id="waiting-list" class="batch-list"></ul>
+    </div>
+    <div>
+      <h2>已完成</h2>
+      <ul id="done-list" class="batch-list"></ul>
+    </div>
+  </section>
+
+  <section class="panel">
+    <button id="reset-btn" class="danger">清空全部数据（恢复示例六批）</button>
+  </section>
+</main>
+
+<script src="js/batches.js"></script>
+<script src="js/scheduler.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
